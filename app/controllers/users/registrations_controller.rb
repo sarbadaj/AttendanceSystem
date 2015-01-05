@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @company = Company.new(company_params)
     @user = @company.users.new(user_params)
     @user.save
-    redirect_to companies_path
+    redirect_to users_path
   end
 
   protected

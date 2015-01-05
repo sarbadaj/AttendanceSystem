@@ -1,5 +1,4 @@
 class Users::RegistrationsController < Devise::RegistrationsController 
-  before_filter :configure_permitted_parameters
 
   def new
     build_resource({})
@@ -10,22 +9,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     @company = Company.new(company_params)
     @user = @company.users.new(user_params)
-    @user.save
-    redirect_to users_path
-  end
-
-  protected
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:email, :password, :password_confirmation)
+    if @user.save
+      redirect_to users_path
+    else
+      render "new"
     end
   end
 
-  def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
-  end
+  private
+    def user_params
+      params.require(:user).permit(:email, :password, :password_confirmation)
+    end
 
-  def company_params
-    params.require(:company).permit(:name)
-  end
+    def company_params
+      params.require(:company).permit(:name)
+    end
 end

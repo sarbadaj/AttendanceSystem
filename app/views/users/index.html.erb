@@ -1,5 +1,0 @@
-<h1>hello</h1>
-<% if user_signed_in? %>
-  <strong><%= current_user.email %></strong>
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link btn btn-default'  %>
-<% end %>

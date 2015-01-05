@@ -10,7 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @company = Company.new(company_params)
     @user = @company.users.new(user_params)
     if @user.save
-      redirect_to users_path
+      redirect_to companies_path
     else
       render "new"
     end

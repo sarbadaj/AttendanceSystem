@@ -1,0 +1,39 @@
+	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="row container">
+    	<div class="navbar-header col-md-3">
+    		<h4>AttendanceSystem</h4>
+      </div>
+      <% if current_user.present? %>
+	      <div class="navbar-header col-md-1">
+	        <div class="navbar-header navbar-form navbar-left">
+	          <button class="btn btn-default">
+	            Report
+	          </button>
+	        </div>
+	      </div>
+	      <div class="navbar-header col-md-1">
+	        <div class="navbar-header navbar-form navbar-left">
+	          <button class="btn btn-default">
+	            Users
+	          </button>
+	        </div>
+	      </div>
+	      <div class="navbar-header pull-right col-md-3">
+	        <% if user_signed_in? %>
+	        	<div class="navbar-header">
+			        <div class="navbar-header navbar-form navbar-left">
+			        	<strong><%= current_user.email %></strong>	
+			        </div>
+			      </div>
+			      <div class="navbar-header col-md-2">
+			        <div class="navbar-header navbar-form navbar-left">
+	          		<%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'btn btn-default'  %>
+	          	</div>
+	          </div>
+	        <% end %>
+	      </div>
+      <% end %>
+    </div>
+  </div>
+</nav>

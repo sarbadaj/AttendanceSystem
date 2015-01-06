@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   belongs_to :company
   accepts_nested_attributes_for :company
+
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :invitable
 end

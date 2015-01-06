@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :company
+  has_many :timetracks
   accepts_nested_attributes_for :company
 
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :invitable

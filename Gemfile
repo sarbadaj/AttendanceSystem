@@ -37,9 +37,9 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'simple_form'
 gem 'devise'
-gem 'devise_invitable', '~> 1.3.4'	
+gem 'devise_invitable', '~> 1.3.4'  
 # In rails 4 application requiring Bootstrap LESS (bootstrap_and_overrides.css.less) in your application.css is meaningless here, because the pipeline comes already with "require_tree ." which automatically includes everything inside the folders of the asset pipeline. So, removing the 3 required gems from the group :asset 
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'

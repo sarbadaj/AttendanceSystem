@@ -7,4 +7,7 @@ class ApplicationController < ActionController::Base
     companies_path
   end
 
+  def after_invite_path_for(resource)
+    users_path
+  end
 end

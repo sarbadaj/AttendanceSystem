@@ -11,13 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150106031229) do
+ActiveRecord::Schema.define(version: 20150106184734) do
 
   create_table "companies", force: true do |t|
     t.string   "name",       default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "timetracks", force: true do |t|
+    t.time     "login_time"
+    t.time     "logout_time"
+    t.time     "duration"
+    t.date     "date"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "timetracks", ["user_id"], name: "index_timetracks_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",   null: false

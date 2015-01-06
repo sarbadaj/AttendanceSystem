@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row container">
     	<div class="navbar-header col-md-3">
-    		<h4>AttendanceSystem</h4>
+    		<h4><%= link_to "AttendanceSystem", companies_path %></h4>
       </div>
       <% if current_user.present? %>
 	      <div class="navbar-header col-md-1">
@@ -14,9 +14,7 @@
 	      </div>
 	      <div class="navbar-header col-md-1">
 	        <div class="navbar-header navbar-form navbar-left">
-	          <button class="btn btn-default">
-	            Users
-	          </button>
+	          <%= link_to "Users", users_path, :class => 'btn btn-default' %>
 	        </div>
 	      </div>
 	      <div class="navbar-header pull-right col-md-3">

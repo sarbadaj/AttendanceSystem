@@ -94,7 +94,8 @@ class Devise::InvitationsController < DeviseController
   private
   def create_company
     user = self.resource
+    user.admin = false
     user.company = current_user.company
-    user.save!(:validate => false)
+    user.save
   end
 end

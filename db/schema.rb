@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20150106184734) do
     t.time     "login_time"
     t.time     "logout_time"
     t.time     "duration"
-    t.date     "date"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -22,5 +22,6 @@ class TimetracksController < ApplicationController
     @timetrack.logout_time = Time.now
     @timetrack.save
     redirect_to companies_path
+    flash[:notice] = "Good-Bye"
   end
 end

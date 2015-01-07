@@ -11,6 +11,13 @@ Rails.application.routes.draw do
 
   resources :users
   resources :companies, only: [:index]
+
+  resources :timetracks do
+    member do
+      get :login
+      get :logout
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

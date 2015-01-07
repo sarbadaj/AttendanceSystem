@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20150106184734) do
   end
 
   create_table "timetracks", force: true do |t|
-    t.time     "login_time"
-    t.time     "logout_time"
+    t.datetime "login_time"
+    t.datetime "logout_time"
     t.time     "duration"
     t.integer  "user_id"
     t.datetime "created_at"

@@ -4,7 +4,6 @@ class CreateTimetracks < ActiveRecord::Migration
 			t.time :login_time
 			t.time :logout_time
 			t.time :duration
-			t.date :date
 			t.references :user, index: true
 
       t.timestamps

@@ -21,7 +21,7 @@ class Devise::InvitationsController < DeviseController
       set_flash_message :notice, :send_instructions, :email => self.resource.email if self.resource.invitation_sent_at
       respond_with resource, :location => after_invite_path_for(resource)
     else
-      respond_with_navigational(resource) { render :new }
+      redirect_to users_path
     end
   end
 

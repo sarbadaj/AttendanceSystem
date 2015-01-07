@@ -1,1 +1,2 @@
-<%= button_to "Login" %>
+<%= link_to "Login", login_timetrack_path(current_user), :class => 'btn btn-default' %>
+<%= link_to "Logout", logout_timetrack_path(current_user), :class => 'btn btn-default' %>

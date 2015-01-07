@@ -10,6 +10,14 @@
             <th>Logout Time</th>
             <th>Duration</th>
           </thead>
+          <% current_user.timetracks.order(created_at: :desc).each do |timetrack| %>
+            <tr>
+            <td><%= timetrack.created_at %></td>
+            <td><%= timetrack.login_time%></td>
+            <td><%= timetrack.logout_time%></td>
+            <td><%= total_duration(timetrack) %></td>
+            </tr>
+          <% end %>
         </table>
       </div>
     </div>

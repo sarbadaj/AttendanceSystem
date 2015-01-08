@@ -9,6 +9,7 @@
 <body>
   <!--<p class="notice alert alert-danger"><%#= notice %></p>
   <p class="alert alert alert-danger"><%#= alert %></p>-->
+  <%= render :partial => "shared/header"%>
   <div class="container">
 	  <% flash.each do |name, msg| %>
 	    <% if msg.is_a?(String) %>
@@ -21,7 +22,6 @@
 	    <% end %>
 	  <% end %>
 	</div>
-  <%= render :partial => "shared/header"%>
   <%= yield %>
 
 </body>

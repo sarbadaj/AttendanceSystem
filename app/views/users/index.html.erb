@@ -21,7 +21,7 @@
             <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_user_path(user), remote: true %>
             
              &nbsp;&nbsp;
-            <%= link_to '<i class="fa fa-minus-circle"></i>'.html_safe, user_path(user), :method => :delete, data: {confirm: "Are you sure want delete user?"}%>
+            <%= link_to_if(user.admin == false, '<i class="fa fa-minus-circle"></i>'.html_safe, user_path(user), :method => :delete, data: {confirm: "Are you sure want delete user?"})%>
             <div class="edit_user_role_<%=user.id%>">
               
             </div>

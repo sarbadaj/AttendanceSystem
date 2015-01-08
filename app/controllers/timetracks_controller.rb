@@ -18,10 +18,20 @@ class TimetracksController < ApplicationController
   end
 
   def logout
-    @timetrack = current_user.timetracks.sort_by{|t| t.id}.last
-    @timetrack.logout_time = Time.now
-    @timetrack.save
-    redirect_to companies_path
-    flash[:notice] = "Good-Bye"
+    if current_user.timetracks.where("login_time >= ?", Time.now.beginning_of_day).present?
+      if current_user.timetracks.where("logout_time >= ?", Time.now.beginning_of_day).present?
+        flash[:notice] = "You have been already logout for today."
+        redirect_to companies_path
+      else
+        @timetrack = current_user.timetracks.sort_by{|t| t.id}.last
+        @timetrack.logout_time = Time.now
+        @timetrack.save
+        redirect_to companies_path
+        flash[:notice] = "Good-Bye"
+      end
+    else
+      flash[:notice] = "You have not login yet. Please login first."
+      redirect_to companies_path
+    end
   end
 end

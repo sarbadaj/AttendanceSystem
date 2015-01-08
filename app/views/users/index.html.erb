@@ -19,11 +19,12 @@
             <td><%= link_to user.email.humanize, user_path(user) %></td>
             <td>
             <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_user_path(user), remote: true %>
-            <div class="edit_user_role">
-              
-            </div>
+            
              &nbsp;&nbsp;
             <%= link_to '<i class="fa fa-minus-circle"></i>'.html_safe, user_path(user), :method => :delete, data: {confirm: "Are you sure want delete user?"}%>
+            <div class="edit_user_role_<%=user.id%>">
+              
+            </div>
             </td>
             </tr>
           <% end %>

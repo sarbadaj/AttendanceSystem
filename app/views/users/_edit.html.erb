@@ -1,6 +1,6 @@
 <h4>Role</h4>
 <%= form_for(user, url: user_path(@user), html: {method: "patch"} ) do |f| %>
 	<%= f.label :admin%>
-	<%= f.collection_radio_buttons :admin, [[true, 'Yes'] ,[false, 'No']], :first, :last%>
+	<%= f.collection_radio_buttons :admin, [[false, 'No'] ,[true, 'Yes']], :first, :last%>
 	<%= f.submit "Save"%>
 <% end %>

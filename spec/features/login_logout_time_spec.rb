@@ -15,7 +15,7 @@ feature "add", :js => true do
     click_link 'Login'
     page.should have_content "Wish you a great day. Thank you for your login"
     click_link 'Logout'
-    page.should have_content "Thank you for your logout"
+    page.should have_content "Good-Bye"
     click_link 'Login'
     page.should have_content "You have been already login for today"
   end

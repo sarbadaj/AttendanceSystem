@@ -1,7 +1,8 @@
 class TimetracksController < ApplicationController
+  before_action :authenticate_user!
 
   def index
-    @timetracks = Timetrack.all
+    @timetracks = current_user.company.timetracks
   end
 
   def login

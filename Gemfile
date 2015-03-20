@@ -44,7 +44,8 @@ gem 'devise_invitable', '~> 1.3.4'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer', '~> 0.10.2'
-gem 'postgres', '~> 0.8.1'
+# gem 'postgres', '~> 0.8.1'
+gem 'pg'
 
 group :development, :test do
   gem 'pry'
